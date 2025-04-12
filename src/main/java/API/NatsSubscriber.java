@@ -1,6 +1,4 @@
 package API;
-
-<<<<<<< HEAD
 import Business.Services.Implementation.MessagingService;
 import io.nats.client.*;
 
