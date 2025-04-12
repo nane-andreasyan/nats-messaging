@@ -5,6 +5,7 @@ import java.sql.Timestamp;
 public class Message {
     public String content;
     public Timestamp timestamp;
+    public int id;
 
     public Message() {
     }
@@ -15,7 +16,6 @@ public class Message {
         this.timestamp = timestamp;
     }
 
-    public int id;
 
     public String getContent() {
         return content;
@@ -34,7 +34,7 @@ public class Message {
         this.content = content;
     }
 
-    public void setID(int id) {
+    public void setId(int id) {
         this.id = id;
     }
 

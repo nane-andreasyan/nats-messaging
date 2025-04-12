@@ -1,4 +1,4 @@
 package src.Business;
 
-public class sample {
+public class smaple {
 }
