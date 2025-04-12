@@ -1,4 +1,4 @@
-package src.Business;
+package java.Business;
 
 public class smaple {
 }

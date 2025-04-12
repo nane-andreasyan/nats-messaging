@@ -1,4 +1,4 @@
-package src.Data.Setup;
+package java.Data.Setup;
 
 public class DatabaseConfig{
 

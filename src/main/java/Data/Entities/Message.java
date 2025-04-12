@@ -1,4 +1,4 @@
-package src.Data.Entities;
+package Data.Entities;
 
 import java.sql.Timestamp;
 

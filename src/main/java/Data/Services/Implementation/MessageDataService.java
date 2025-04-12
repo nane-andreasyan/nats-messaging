@@ -1,14 +1,13 @@
-package src.Data.Services.Implementation;
+package Data.Services.Implementation;
 
+import Data.Entities.Message;
+import Data.Services.IMessageDataService;
+import java.Data.Setup.DatabaseConfig;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-
-import src.Data.Entities.Message;
-import src.Data.Services.IMessageDataService;
-import src.Data.Setup.DatabaseConfig;
 
 public class MessageDataService implements IMessageDataService {
     @Override

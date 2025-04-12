@@ -1,4 +1,5 @@
-package src.Business.Services;
+package Business.Services;
 
 public interface IMessagingService {
+
 }

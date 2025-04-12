@@ -1,4 +1,4 @@
-package src.Business.Services.Implementation;
+package Business.Services.Implementation;
 
 public class MessagingService {
 

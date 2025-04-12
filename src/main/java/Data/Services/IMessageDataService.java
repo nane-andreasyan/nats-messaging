@@ -1,6 +1,6 @@
-package src.Data.Services;
+package Data.Services;
 
-import src.Data.Entities.Message;
+import Data.Entities.Message;
 
 public interface IMessageDataService {
     public Message getMessage(int id);
