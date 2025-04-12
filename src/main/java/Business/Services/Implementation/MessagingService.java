@@ -19,5 +19,4 @@ public class MessagingService implements IMessagingService {
         ds.saveMessage(m);
     }
 
-
 }
