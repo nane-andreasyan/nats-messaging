@@ -14,7 +14,9 @@ public class NatsSubscriber {
 
     public void subscribe() {
         try {
-            Connection nc = Nats.connect("nats://localhost:4222");
+
+            String natsUrl = System.getenv().getOrDefault("NATS_URL", "nats://localhost:4222");
+            Connection nc = Nats.connect(natsUrl);
 
             Dispatcher dispatcher = nc.createDispatcher((Message msg) -> {
                 String raw = new String(msg.getData());

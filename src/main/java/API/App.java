@@ -1,7 +1,5 @@
 package API;
 
-import API.NatsSubscriber;
-import Business.Services.IMessagingService;
 import Business.Services.Implementation.MessagingService;
 
 public class App {
@@ -12,6 +10,4 @@ public class App {
 
         subscriber.subscribe();
     }
-
 }
-
