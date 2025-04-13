@@ -1,11 +1,18 @@
 package Business.Services.Implementation;
 import Business.Services.IMessagingService;
 import Data.Entities.Message;
-import Data.Services.Implementation.MessageDataService;
+import Data.Services.IMessageDataService;
 
 import java.sql.Timestamp;
 
 public class MessagingService implements IMessagingService {
+
+    protected IMessageDataService ms;
+
+    public MessagingService(IMessageDataService ms) {
+        this.ms = ms;
+    }
+
 
     public void process(String rawMessage) {
         if(rawMessage == null) {
@@ -15,8 +22,7 @@ public class MessagingService implements IMessagingService {
         Message m = new Message();
         m.setContent(rawMessage);
         m.setTimestamp(new Timestamp(System.currentTimeMillis()));
-        MessageDataService ds = new MessageDataService();
-        ds.saveMessage(m);
+        ms.saveMessage(m);
     }
 
 }

@@ -1,13 +1,13 @@
 package API;
-import Business.Services.Implementation.MessagingService;
+import Business.Services.IMessagingService;
 import io.nats.client.*;
 
 public class NatsSubscriber {
 
-    private final MessagingService messageService;
-    private final String subject;
+    protected IMessagingService messageService;
+    protected String subject;
 
-    public NatsSubscriber(MessagingService messageService, String subject) {
+    public NatsSubscriber(IMessagingService messageService, String subject) {
         this.messageService = messageService;
         this.subject = subject;
     }
