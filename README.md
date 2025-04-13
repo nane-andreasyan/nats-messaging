@@ -2,12 +2,12 @@
 
 A lightweight, event-driven Java application that subscribes to a [NATS](https://nats.io) messaging server, processes incoming messages, and persists them into a PostgreSQL database. Built with Docker, Java 17, and Maven for seamless containerized deployment.
 
-## 🚀 Tech Stack
+## Tech Stack
 
-- Java 17
+- Java
 - Maven
-- PostgreSQL 15
-- NATS 2.11
+- PostgreSQL
+- NATS
 - Docker + Docker Compose
 
 ## Application Layers
@@ -25,8 +25,8 @@ A lightweight, event-driven Java application that subscribes to a [NATS](https:/
 
 1. Clone the repository
 
-   git clone https://github.com/your-username/nats-messaging-app.git
-   cd nats-messaging-app
+   git clone https://github.com/nane-andreasyan/nats-messaging.git
+   cd nats-messaging
 
 2. Build and start the services
 
