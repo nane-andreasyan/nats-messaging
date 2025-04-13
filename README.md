@@ -13,13 +13,16 @@ A lightweight, event-driven Java application that subscribes to a [NATS](https:/
 ## Application Layers
 
 - API Layer  
+
   Subscribes to a NATS subject and receives incoming data. Communicates exclusively with Business Layer interfaces.
 
 - Business Layer
+
   Validates and processes incoming messages before forwarding them for storage. To ensure proper separation of concerns, the Business and Data layers communicate through a ServiceCreator class—this is the only place where a concrete implementation is used instead of an interface.
   
 - Data Layer  
-  Handles connection to PostgreSQL and persists messages with content and timestamp.
+
+   Handles connection to PostgreSQL and persists messages with content and timestamp.
 
 ## How to Run (with Docker)
 
