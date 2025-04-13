@@ -24,41 +24,66 @@ A lightweight, event-driven Java application that subscribes to a [NATS](https:/
 ## How to Run (with Docker)
 
 1. Clone the repository
-
+```
    git clone https://github.com/nane-andreasyan/nats-messaging.git
    cd nats-messaging
+```
 
-2. Build and start the services
-
+3. Build and start the services
+```
    docker-compose up --build
-
+```
 This will:
 - Start PostgreSQL on port 5432
 - Start a NATS server on port 4222
 - Build and run the Java application
 
-## How to Publish a Message
-
+## How to Create the Table
 In a new terminal:
 
-   docker run --rm --network=nats-messaging_default natsio/nats-box \
-   nats --server nats://nats-server:4222 pub messages "Hello from NATS!"
+Connect to the PostgreSQL container:
 
+```
+docker exec -it postgres-db psql -U naneandreasyan -d messaging
+```
+
+Run the following SQL:
+
+```
+CREATE TABLE messages (
+  id SERIAL PRIMARY KEY,
+  content TEXT NOT NULL,
+  timestamp TIMESTAMP NOT NULL
+);
+```
+
+Exit the Postgres shell:
+```
+\q
+```
+
+## How to Publish a Message
+
+```
+   docker run --rm natsio/nats-box nats --server nats://host.docker.internal:4222 pub messages "Hi!"
+```
 You should see output like:
 
-   Received message from NATS: Hello from NATS!
-   Message saved to DB.
+```
+  Received message from NATS: Hi!
+  Message saved to DB.
+```
 
 ## How to View Saved Messages
 
 Connect to the PostgreSQL container:
-
+```
    docker exec -it postgres-db psql -U naneandreasyan -d messaging
-
+```
 Then run:
-
-   SELECT * FROM messages;
-
+```
+  SELECT * FROM messages;
+```
 ## Build Notes
 
 - The application uses a fat JAR built via the Maven Shade Plugin.
